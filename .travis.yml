@@ -2,7 +2,7 @@ language: php
 sudo: false
 
 php:
-  - 5.4
+#  - 5.4
   - 5.5
 
 branches:
@@ -16,23 +16,24 @@ mysql:
 
 env:
   - UPGRADE=none
-  - UPGRADE=7.x-2.23
-  - UPGRADE=7.x-2.22
-  - UPGRADE=7.x-2.21
-  - UPGRADE=7.x-2.20
-  - UPGRADE=7.x-2.19
-  - UPGRADE=7.x-2.18
-  - UPGRADE=7.x-2.17
-  - UPGRADE=7.x-2.16
-  - UPGRADE=7.x-2.15
-  - UPGRADE=7.x-2.14
-  - UPGRADE=7.x-2.13
-  - UPGRADE=7.x-2.12
+#  - UPGRADE=7.x-2.23
+#  - UPGRADE=7.x-2.22
+#  - UPGRADE=7.x-2.21
+#  - UPGRADE=7.x-2.20
+#  - UPGRADE=7.x-2.19
+#  - UPGRADE=7.x-2.18
+#  - UPGRADE=7.x-2.17
+#  - UPGRADE=7.x-2.16
+#  - UPGRADE=7.x-2.15
+#  - UPGRADE=7.x-2.14
+#  - UPGRADE=7.x-2.13
+#  - UPGRADE=7.x-2.12
 
 matrix:
   fast_finish: true
   include:
-    - env: UPGRADE=none PSQL=1
+    - php: "5.5"
+      env: UPGRADE=none PSQL=1
       addons:
         postgresql: "9.3"
 
