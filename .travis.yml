@@ -112,7 +112,7 @@ before_script:
   # Do the site install (either the current revision or old for the upgrade).
   - if [[ "$UPGRADE" == none ]]; then cd drupal; else cd commerce_kickstart-$UPGRADE; fi
   - if [[ "$PSQL" != 1 ]]; then drush si commerce_kickstart --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Commerce Kickstart" --yes; fi
-  - if [[ "$PSQL" == 1 ]]; then drush si commerce_kickstart --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Commerce Kickstart" --yes; fi
+  - if [[ "$PSQL" == 1 ]]; then drush si commerce_kickstart --db-url=pgsql://postgres:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Commerce Kickstart" --yes; fi
   - drush pm-disable dblog --yes
   - cd ../drupal
 
