@@ -31,9 +31,14 @@ env:
 
 matrix:
   fast_finish: true
+  include:
+    - env: UPGRADE=none PSQL=1
+      addons:
+        postgresql: "9.3"
 
 install:
   - "mysql -e 'create database drupal;'"
+  - if [[ "$PSQL" == 1 ]]; then psql -U postgres -c 'CREATE DATABASE drupal;'; fi
 
   # Install latest Drush 6.
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
@@ -105,7 +110,8 @@ before_script:
 
   # Do the site install (either the current revision or old for the upgrade).
   - if [[ "$UPGRADE" == none ]]; then cd drupal; else cd commerce_kickstart-$UPGRADE; fi
-  - drush si commerce_kickstart --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Commerce Kickstart" --yes
+  - if [[ "$PSQL" != 1 ]]; then drush si commerce_kickstart --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Commerce Kickstart" --yes; fi
+  - if [[ "$PSQL" == 1 ]]; then drush si commerce_kickstart --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Commerce Kickstart" --yes; fi
   - drush pm-disable dblog --yes
   - cd ../drupal
 
