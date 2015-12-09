@@ -147,6 +147,7 @@ projects[lingotek][version] = 6.02
 ; Base theme.
 projects[omega][version] = 3.1
 projects[omega][patch][] = "http://drupal.org/files/relative-src-15.patch"
+projects[omega][patch][1348820] = "https://www.drupal.org/files/issues/reduce_alpha_invoke-1348820-40-do-not-test.patch"
 projects[omega][type] = theme
 projects[omega_kickstart][version] = 3.4
 projects[omega_kickstart][type] = theme
