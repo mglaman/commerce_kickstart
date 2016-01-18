@@ -159,6 +159,9 @@ script:
   - if [[ "$TEST_FEATURES_OVERRIDES" != 1 ]]; then ./bin/behat --config behat.travis.yml --tags ~@overrides; fi
   - if [[ "$TEST_FEATURES_OVERRIDES" == 1 ]]; then ./bin/behat --config behat.travis.yml --tags @overrides; fi
 
+  # Test non-demo install.
+  - drush si commerce_kickstart --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Commerce Kickstart" commerce_kickstart_configure_store_form.install_demo_store=0 --yes
+
 notifications:
 
   irc: "chat.freenode.net#drupal-commerce"
