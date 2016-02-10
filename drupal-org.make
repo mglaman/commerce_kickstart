@@ -26,6 +26,7 @@ projects[views_megarow][version] = 1.5
 projects[commerce][version] = 1.11
 projects[commerce_features][version] = 1.1
 projects[commerce_addressbook][version] = 2.0-rc9
+projects[commerce_addressbook][patch][] = https://www.drupal.org/files/issues/commerce_addressbook-set-as-default-2550091-2.patch
 projects[commerce_shipping][version] = 2.2
 projects[commerce_flat_rate][version] = 1.0-beta2
 projects[commerce_fancy_attributes][version] = 1.0
