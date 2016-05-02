@@ -24,6 +24,7 @@ projects[views_megarow][version] = 1.5
 
 ; Drupal Commerce and Commerce contribs.
 projects[commerce][version] = 1.13
+projects[commerce][patch][] = https://www.drupal.org/files/issues/provide_an_entity_class-2717505-6.patch
 projects[commerce_features][version] = 1.1
 projects[commerce_addressbook][version] = 2.0-rc9
 projects[commerce_shipping][version] = 2.2
