@@ -50,6 +50,7 @@ projects[commerce_moneybookers][patch][] = "http://drupal.org/files/commerce_mon
 projects[commerce_paypal][version] = 2.3
 projects[commerce_paypal][patch][2458721] = "https://www.drupal.org/files/issues/commerce_paypal-addressfield-default-values-2458721-1.patch"
 projects[commerce_backoffice][version] = 1.5
+projects[commerce_backoffice][patch][] = "https://www.drupal.org/files/issues/commerce_backoffice-new-access-callback-2694721-5.patch"
 projects[commerce_message][version] = 1.0-rc4
 projects[commerce_search_api][version] = 1.4
 projects[commerce_add_to_cart_confirmation][version] = 1.0-rc2
