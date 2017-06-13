@@ -1,0 +1,79 @@
+{
+  "name": "commerceguys/commerce_kickstart",
+  "description": "Install with Drupal Commerce pre-configured for use.",
+  "type": "drupal-profile",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "cweagans/composer-patches": "^1.5.0",
+    "composer/installers": "^1.2",
+    "drupal-composer/drupal-scaffold": "^2.0.0",
+    "drupal/lightning": "^2.0",
+    "drupal/commerce": "^2.0",
+    "drupal/swiftmailer": "^1.0",
+    "drupal/search_api": "^1.1"
+  },
+  "require-dev": {
+    "behat/mink": "~1.7",
+    "behat/mink-goutte-driver": "~1.2",
+    "jcalderonzumba/gastonjs": "~1.0.2",
+    "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+    "mikey179/vfsStream": "~1.2",
+    "phpunit/phpunit": "~4.8",
+    "symfony/css-selector": "~2.8",
+    "drush/drush": "8.1.11",
+    "drupal/drupal-extension": "^3.2",
+    "behat/behat": "^3.0",
+    "drupal/coder": "~8.2.0",
+    "phing/phing": "^2.14",
+    "drupal/devel": "^1.0",
+    "squizlabs/php_codesniffer": "2.*",
+    "drupal/console": "^1.0"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@composer drupal-scaffold",
+      "./bin/phing push",
+      "./bin/phing symlink"
+    ],
+    "post-update-cmd": [
+      "./bin/phing push",
+      "./bin/phing symlink"
+    ],
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/profiles/commerce_kickstart/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/commerce_kickstart/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ]
+    }
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  }
+}

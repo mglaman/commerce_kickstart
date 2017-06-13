@@ -1,0 +1,35 @@
+name: 'Commerce Kickstart'
+type: profile
+version: 8.x-dev
+description: 'Install with Drupal Commerce pre-configured for use.'
+distribution:
+  name: Commerce Kickstart
+core: '8.x'
+dependencies:
+  - address
+  - entity
+  - profile
+  - inline_entity_form
+  - state_machine
+  - commerce
+  - commerce_log
+  - commerce_checkout
+  - commerce_cart
+  - commerce_order
+  - commerce_product
+  - commerce_price
+  - commerce_store
+  - commerce_payment
+  - commerce_promotion
+  - commerce_tax
+  - swiftmailer
+  - search_api
+
+themes:
+  - bartik
+  - seven
+
+base profile:
+  name: lightning
+  excluded_dependencies:
+    - lightning_workflow
