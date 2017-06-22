@@ -117,7 +117,7 @@
   </target>
 
   <target name="tests" depends="preinstall">
-    <exec command="../bin/phpunit --configuration ./core profiles/commerce_kickstart --group commerce_kickstart" dir="${docroot}" passthru="true" checkreturn="true" />
+    <exec command="SIMPLETEST_BASE_URL=${url} SIMPLETEST_DB=sqlite://localhost/sites/default/files/.ht.sqlite ../bin/phpunit --configuration ./core profiles/commerce_kickstart --group commerce_kickstart" dir="${docroot}" passthru="true" checkreturn="true" />
   </target>
 
 </project>

@@ -1,0 +1,13 @@
+core = 8.x
+api = 2
+defaults[projects][subdir] = contrib
+projects[entity][type] = module
+projects[entity][version] = 1.0-alpha4
+projects[metatag][type] = module
+projects[metatag][version] = 1.1
+projects[pathauto][type] = module
+projects[pathauto][version] = 1.0
+projects[search_api][type] = module
+projects[search_api][version] = 1.1
+projects[token][type] = module
+projects[token][version] = 1.0

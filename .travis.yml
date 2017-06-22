@@ -44,7 +44,7 @@ install:
   - mysql -u root -e "CREATE DATABASE drupal; CREATE USER 'kickstart'@'localhost' IDENTIFIED BY 'kickstart'; GRANT ALL ON drupal.* TO 'kickstart'@'localhost';"
 
 before_script:
-  - php -S localhost:8888 -t ./web >& /dev/null &
+  - php -S 127.0.0.1:8888 -t ./web >& /dev/null &
   - phantomjs --ssl-protocol=any --ignore-ssl-errors=true $DRUPAL_TI_DRUPAL_DIR/vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768 2>&1 >> /dev/null &
   - ./bin/phing install -Ddb.database=drupal -Ddb.user=kickstart -Ddb.password=kickstart -Ddb.host=127.0.0.1 -Durl=$SIMPLETEST_BASE_URL
 

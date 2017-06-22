@@ -1,0 +1,6 @@
+name: Commerce Kickstart Demo
+type: module
+description: Enables the Kickstart demo store
+core: 8.x
+package: Commerce Kickstart
+hidden: true

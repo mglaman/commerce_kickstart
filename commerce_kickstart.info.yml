@@ -24,12 +24,13 @@ dependencies:
   - commerce_tax
   - swiftmailer
   - search_api
+  - metatag
+  - pathauto
+  - token
 
 themes:
   - bartik
   - seven
 
 base profile:
-  name: lightning
-  excluded_dependencies:
-    - lightning_workflow
+  name: standard

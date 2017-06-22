@@ -5,10 +5,14 @@
  * Install, update and uninstall hooks for the Commerce Kickstart subprofile.
  */
 
+ use Drupal\user\Entity\User;
+
 /**
  * Implements hook_install().
  */
 function commerce_kickstart_install() {
-  // Add code here perform additional site information tasks, generate sample
-  // content, etc.
+  // Assign user 1 the "administrator" role.
+  $user = User::load(1);
+  $user->roles[] = 'administrator';
+  $user->save();
 }
