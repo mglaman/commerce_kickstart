@@ -1,10 +1,10 @@
 ; Drupal.org release file.
-core = 7.56
+core = 7.57
 api = 2
 
-projects[ctools] = 1.12
-projects[entity] = 1.8
+projects[ctools] = 1.13
+projects[entity] = 1.9
 projects[rules] = 2.10
-projects[views] = 3.17
+projects[views] = 3.18
 projects[addressfield] = 1.2
-projects[commerce] = 1.13
+projects[commerce] = 1.14
