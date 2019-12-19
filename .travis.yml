@@ -49,6 +49,7 @@ cache:
 before_install:
   # Remove xdebug for the moment. We aren't generating code coverage, and it slows us down.
   - rm /home/travis/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
+  - echo "memory_limit=512M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
 install:
   # Install Chromedriver.
